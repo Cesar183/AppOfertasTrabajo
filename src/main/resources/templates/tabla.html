@@ -9,9 +9,11 @@
     <title>Listado de Vacantes</title>
 </head>
 <body>
+    <img th:src="@{/static/images/logo.png}" alt="logo" width="136" height="136">
 	<h1>Lista de vacantes</h1>
     <table class="table table-dark table-hover table-bordered">
         <tr>
+            <th>Logo</th>
             <th>Id</th>
             <th>Nombre</th>
             <th>Fecha de publicación</th>
@@ -20,6 +22,9 @@
             <th>Destacada</th>
         </tr>
         <tr th:each="vacante : ${vacantes}">
+            <td>
+                <img th:src="@{/static/images/{img} (img=${vacante.imagen})}" alt="logo-empresa">
+            </td>
             <td th:text="${vacante.id}"></td>
             <td th:text="${vacante.nombre}"></td>
             <td th:text="${vacante.fecha}"></td>
